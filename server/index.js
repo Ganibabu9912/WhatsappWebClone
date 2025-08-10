@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -31,6 +32,14 @@ app.use('/api/contacts', contactRoutes);
 // Health check
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', message: 'WhatsApp Web Clone Server is running' });
+});
+
+// Serve static files from the React build
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+// Handle React routing, return all requests to React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
 app.listen(PORT, () => {

@@ -4,7 +4,6 @@ services:
     env: node
     buildCommand: npm run build
     startCommand: npm start
-    staticPublishPath: client/build
     envVars:
       - key: MONGODB_URI
         sync: false
