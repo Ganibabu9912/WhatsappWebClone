@@ -41,7 +41,7 @@ const AddContactModal = ({ isOpen, onClose, onContactAdded }) => {
         labels: formData.labels.trim() ? formData.labels.split(',').map(label => label.trim()) : []
       };
 
-      const response = await fetch('/api/contacts', {
+      const response = await fetch('https://whatsappwebclone-ctfp.onrender.com/api/contacts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

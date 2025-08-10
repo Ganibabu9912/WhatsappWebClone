@@ -24,7 +24,7 @@ const ChatArea = ({ conversation, messages, onSendMessage, onToggleSidebar }) =>
 
     const pollStatusUpdates = async () => {
       try {
-        const response = await fetch(`/api/messages/status-updates/${conversation.wa_id}`);
+        const response = await fetch(`https://whatsappwebclone-ctfp.onrender.com/api/messages/status-updates/${conversation.wa_id}`);
         if (response.ok) {
           const statusUpdates = await response.json();
           if (statusUpdates.length > 0) {

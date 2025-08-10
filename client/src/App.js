@@ -33,7 +33,7 @@ function App() {
 
   const fetchMessages = async (wa_id) => {
     try {
-      const response = await fetch(`/api/messages/conversation/${wa_id}`);
+      const response = await fetch(`https://whatsappwebclone-ctfp.onrender.com/api/messages/conversation/${wa_id}`);
       if (response.ok) {
         const data = await response.json();
         setMessages(data);
@@ -54,7 +54,7 @@ function App() {
     if (!selectedConversation || !messageText.trim()) return;
 
     try {
-      const response = await fetch('/api/messages/send', {
+      const response = await fetch('https://whatsappwebclone-ctfp.onrender.com/api/messages/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

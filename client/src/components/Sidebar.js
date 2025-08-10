@@ -26,7 +26,7 @@ const Sidebar = ({
   const fetchContacts = async () => {
     try {
       setContactsLoading(true);
-      const response = await fetch('/api/contacts');
+      const response = await fetch('https://whatsappwebclone-ctfp.onrender.com/api/contacts');
       if (response.ok) {
         const data = await response.json();
         console.log('📱 Fetched contacts:', data);
@@ -47,7 +47,7 @@ const Sidebar = ({
     
     try {
       setIsRefreshing(true);
-      const response = await fetch('/api/contacts');
+      const response = await fetch('https://whatsappwebclone-ctfp.onrender.com/api/contacts');
       if (response.ok) {
         const data = await response.json();
         console.log('🔄 Contacts refreshed successfully:', data);
@@ -222,7 +222,7 @@ const Sidebar = ({
     
     try {
       console.log('Toggling pin for contact:', contextMenu.contact.wa_id);
-      const response = await fetch(`/api/contacts/${contextMenu.contact.wa_id}/toggle/pin`, {
+      const response = await fetch(`https://whatsappwebclone-ctfp.onrender.com/api/contacts/${contextMenu.contact.wa_id}/toggle/pin`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -262,7 +262,7 @@ const Sidebar = ({
     
     try {
       console.log('Deleting contact:', contextMenu.contact.wa_id);
-      const response = await fetch(`/api/contacts/${contextMenu.contact.wa_id}`, {
+      const response = await fetch(`https://whatsappwebclone-ctfp.onrender.com/api/contacts/${contextMenu.contact.wa_id}`, {
         method: 'DELETE'
       });
 

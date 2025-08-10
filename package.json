@@ -2,14 +2,18 @@
   "name": "whatsapp-web-clone",
   "version": "1.0.0",
   "description": "WhatsApp Web Clone with React frontend and Node.js backend",
-  "private": true,
+  "main": "server.js",
   "scripts": {
-    "build": "cd client && npm install && npm run build",
-    "start": "cd server && npm start",
-    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\""
+    "start": "node server.js",
+    "build": "cd client && npm install && npm run build && cp -r build/* ../",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start"
   },
-  "workspaces": [
-    "client",
-    "server"
-  ]
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
