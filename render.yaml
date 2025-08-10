@@ -2,8 +2,8 @@ services:
   - type: web
     name: whatsappwebclone-ctfp
     env: node
-    buildCommand: cd client && npm install && npm run build
-    startCommand: cd server && npm install && npm start
+    buildCommand: npm run build
+    startCommand: npm start
     staticPublishPath: client/build
     envVars:
       - key: MONGODB_URI
