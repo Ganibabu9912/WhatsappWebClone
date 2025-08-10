@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "description": "WhatsApp Web Clone with React frontend and Node.js backend",
   "private": true,
+  "main": "client/build/index.html",
   "scripts": {
     "build": "cd client && npm install && npm run build",
     "start": "cd server && npm start",
-    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\""
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
+    "vercel-build": "cd client && npm install && npm run build"
   },
   "workspaces": [
     "client",
     "server"
-  ]
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  }
 }
